@@ -12,9 +12,8 @@
       >
         <b-row no-gutters>
           <b-col md="3">
-            {{this.showResult.tO}}
             <b-card-img
-              :src="this.showResult.tO"
+              v-bind:src="this.showResult.tO"
               alt="Image"
               class="rounded-0"
             ></b-card-img>
