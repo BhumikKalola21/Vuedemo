@@ -1,12 +1,16 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+    <b-card>
+      <b-icon
+        icon="google"
+        @click="login()"
+        class="icon1"
+      ></b-icon>
+      <b-icon icon="linkedin" class="icon1"></b-icon>
+    </b-card>
 </template>
-<script>
 
+<script>
 export default {
-  name: "App",
   data(){
     return{
       gisLogin: false,
@@ -22,33 +26,22 @@ export default {
       // console.log("getBaseProfile", googleUser.getBasicProfile());
       (responseObj.showResult = googleUser.getBasicProfile()),
         console.log(responseObj.showResult),
-        console.log(responseObj.showResult.vO);
+        // console.log(responseObj.showResult.vO);
         (responseObj.gisLogin = true),
         (responseObj.gisLogin = this.$gAuth.isAuthorized);
         this.$store.commit('loginMutation', responseObj);
-    },
-    async logOut() {
-      const result = await this.$gAuth.signOut();
-      this.gisLogin = false;
-      console.log(`result`, result);
+        this.$router.push('/profile/');
     },
   },
   created(){
     this.gisLogin = this.$store.getters['gisLogin'];
     this.showResult = this.$store.getters['showResult'];
   }
-};
-</script>
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  padding: 10rem;
 }
+</script>
+
+<style>
+
 .icon1 {
   padding: 20px;
 }
