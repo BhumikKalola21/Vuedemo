@@ -20,13 +20,12 @@ export default {
   },
   methods: {
     async login() {
-      const googleUser = await this.$gAuth.signIn();
-      let responseObj = {};
+        const googleUser = await this.$gAuth.signIn();
+        let responseObj = {};
 
       // console.log("getBaseProfile", googleUser.getBasicProfile());
       (responseObj.showResult = googleUser.getBasicProfile()),
-        console.log(responseObj.showResult),
-        // console.log(responseObj.showResult.vO);
+        // console.log(responseObj.showResult),
         (responseObj.gisLogin = true),
         (responseObj.gisLogin = this.$gAuth.isAuthorized);
         this.$store.commit('loginMutation', responseObj);

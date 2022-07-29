@@ -7,36 +7,6 @@
 
 export default {
   name: "App",
-  data(){
-    return{
-      gisLogin: false,
-      lisLogin: false,
-      showResult: {},
-    }
-  },
-  methods: {
-    async login() {
-      const googleUser = await this.$gAuth.signIn();
-      let responseObj = {};
-
-      // console.log("getBaseProfile", googleUser.getBasicProfile());
-      (responseObj.showResult = googleUser.getBasicProfile()),
-        console.log(responseObj.showResult),
-        console.log(responseObj.showResult.vO);
-        (responseObj.gisLogin = true),
-        (responseObj.gisLogin = this.$gAuth.isAuthorized);
-        this.$store.commit('loginMutation', responseObj);
-    },
-    async logOut() {
-      const result = await this.$gAuth.signOut();
-      this.gisLogin = false;
-      console.log(`result`, result);
-    },
-  },
-  created(){
-    this.gisLogin = this.$store.getters['gisLogin'];
-    this.showResult = this.$store.getters['showResult'];
-  }
 };
 </script>
 <style>

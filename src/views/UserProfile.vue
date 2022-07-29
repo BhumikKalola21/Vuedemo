@@ -3,6 +3,7 @@
       <b-icon
         @click="logOut()"
         icon="power"
+        class="icon1"
         aria-hidden="true"
       ></b-icon>
       <b-card
@@ -53,12 +54,15 @@ export default {
   created(){
     this.gisLogin = this.$store.getters['gisLogin'];
     this.showResult = this.$store.getters['showResult'];
-    console.log(this.showResult);
+    // console.log(this.showResult);
   }
 }
 </script>
 
 <style>
+.icon1 {
+  padding: 20px;
+}
 
 .card2 {
   margin: auto;
