@@ -21,15 +21,13 @@ export default {
 
       // console.log("getBaseProfile", googleUser.getBasicProfile());
       (responseObj.showResult = googleUser.getBasicProfile()),
-        console.log(responseObj.showResult),
+        // console.log(responseObj.showResult),
         (responseObj.gisLogin = true),
         (responseObj.gisLogin = this.$gAuth.isAuthorized);
       this.$store.commit("loginMutation", responseObj);
       this.$router.push("/dashboard/");
     },
   },
-
-  
 
   created() {
     this.gisLogin = this.$store.getters["gisLogin"];
