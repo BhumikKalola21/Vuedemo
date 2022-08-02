@@ -12,11 +12,8 @@
         data-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
-        aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <router-link class="nav-link" to="/googleapi">
@@ -24,7 +21,7 @@
             </router-link>
           </li>
         </ul>
-      </div>
+      
     </nav>
     <div>
       <div class="row">
@@ -58,7 +55,6 @@ export default {
   },
   async mounted() {
     let result = await axios.get("https://reqres.in/api/users?page=1");
-    console.log(result.data.data);
     this.list = result.data.data;
   },
 };
