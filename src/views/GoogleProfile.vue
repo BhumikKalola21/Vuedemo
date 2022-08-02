@@ -44,7 +44,6 @@ export default {
   created() {
     this.gisLogin = this.$store.getters["gisLogin"];
     this.showResult = this.$store.getters["showResult"];
-    // console.log(this.showResult);
   },
 };
 </script>
