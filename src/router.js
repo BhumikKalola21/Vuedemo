@@ -1,15 +1,17 @@
 import VueRouter from "vue-router";
 import Vue from "vue";
-import UserProfile from './views/UserProfile.vue';
-import UserLogin from './views/UserLogin.vue';
+import GoogleProfile from './views/GoogleProfile.vue';
+import GoogleLogin from './views/GoogleLogin.vue';
+import TheDashboard from './views/TheDashboard.vue';
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        { path: '/', component: UserLogin},
-        { path: '/profile', component: UserProfile}
+        { path: '/', component: TheDashboard},
+        { path: '/googleapi', component: GoogleLogin},
+        { path: '/profile', component: GoogleProfile},
     ]
 });
 

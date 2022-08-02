@@ -6,7 +6,9 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 import { BIcon } from 'bootstrap-vue'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import axios from 'axios'
 
+Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 import GAuth from 'vue-google-oauth2'
@@ -16,6 +18,8 @@ const gauthOption = {
   prompt: 'consent',
   fetch_basic_profile: true
 }
+
+
 
 Vue.use(GAuth, gauthOption)
 Vue.use(BootstrapVue)
